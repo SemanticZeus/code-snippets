@@ -1,0 +1,25 @@
+*.out
+*.exe
+mnist_data
+**/obj/
+**/*xconfig*/*
+
+# Ignore all build folders recursively
+build/
+
+# Ignore all obj folders recursively
+obj/
+
+# Specific OS-related files and folders
+# macOS
+.DS_Store
+*.DS_Store
+__MACOSX/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~        # Temporary editor files
+*.swp     # Vim swap files
