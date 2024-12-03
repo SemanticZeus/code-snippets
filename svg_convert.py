@@ -96,8 +96,10 @@ def convert_svg_paths(svg_file, output_file):
         d_attribute = re.sub(r'([a-zA-Z])', r' \1 ', d_attribute)
         d_attribute = re.sub(r'(?<=\d)(-)', r' \1', d_attribute)
         for c in string.ascii_uppercase:
+            print(c)
             d_attribute = re.sub(r'{}[^a-zA-Z]*'.format(c), f(x,y), d_attribute)
         for c in string.ascii_lowercase:
+            print(c)
             d_attribute = re.sub(r'{}[^a-zA-Z]*'.format(c), f(0,0), d_attribute)
 
 
