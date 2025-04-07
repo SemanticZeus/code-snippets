@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Home - My Blog{% endblock %}
+{% block content %}
+<div class="container">
+  {% for post in posts %}
+    <div class="post-preview">
+      <a href="{% url 'blog:post_detail' post.id %}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
+      </a>
+      <p class="post-meta">
+        Posted by {{ post.author }} on {{ post.published_date|date:"F d, Y" }}
+      </p>
+    </div>
+    <hr class="my-4">
+  {% empty %}
+    <p>No posts available. Please check back later.</p>
+  {% endfor %}
+</div>
+{% endblock %}
+

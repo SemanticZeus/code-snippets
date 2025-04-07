@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Contact - My Blog{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Contact Me</h1>
+  <p>Feel free to reach out with any questions or comments. Fill out the form below, and I'll get back to you as soon as possible.</p>
+  <form method="post">
+    {% csrf_token %}
+    <!-- Replace the following with your form fields or a Django form -->
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="name" placeholder="Your Name">
+      <label for="name">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea class="form-control" id="message" style="height: 150px" placeholder="Your Message"></textarea>
+      <label for="message">Message</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+</div>
+{% endblock %}
+
